@@ -2,24 +2,28 @@
 using namespace std;
 int main() {
   std::cout << "Hello World!\n";
-  int n=0;
-  cin>>n;
-  int arr[n][n];
-  int sarr[n][n];
-  for(int t=0;t<n;t++){
-    for(int st=0;st<n;st++){
-      cin>>arr[t][st];
+  int suc=1;
+  char arr[5];
+  cin>>arr;
+  int sta=0;
+  int en=0,nu=0;
+  for(int t=0;t<100;t++){
+    if(arr[t]=='/0'){
+      en=t;
+      break;
     }
   }
-  for(int td=0;td<n;td++){
-    for(int sto=0;sto<n;sto++){
-      sarr[td][sto]=arr[sto][td];
+  for(int ti=0;ti<sta-en;ti++){
+    if(arr[sta]==arr[en]){
+      sta++;
+      en--;
+    }else{
+      cout<<"nope";
+      suc=0;
+      break;
     }
   }
-  for(int timed=0;timed<n;timed++){
-    for(int tim=0;tim<n;tim++){
-      cout<<sarr[timed][tim]<<" ";
-    }
-    cout<<endl;
-  }
+ if(suc==1){
+   cout<<"yes";
+ }
 }
